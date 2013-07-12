@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "OpinionHack",
+  "description": "This extension hacks amazon.",
+  "version": "1.0",
+  "permissions": [
+    "http://www.amazon.com/","tabs", 
+	"http://10.60.6.149/"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+	    "persistent": false,
+	    "scripts": ["popup.js"]
+	  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.amazon.com/*"],
+      /*"css": ["mystyles.css"],*/
+      "js": [
+		 "jquery.js",		 
+ 		 "OpinionHack.user.js"
+		]
+    }
+  ]
+}
