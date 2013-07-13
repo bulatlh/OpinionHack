@@ -33,32 +33,43 @@
 
 
 
-document.styleSheets[0].insertRule("#opinion {position:relative; top:10px; left:0px; "+ 
-    " height: 100x; width:500x; background-color:yellow; z-index:100;" + "border:1px solid; border-radius:4px;" + "}");
+document.styleSheets[0].insertRule("#opinion {position:relative; top:10px; left:0px; "+
+    " height: 35px; width:215px; background-color: rgb(230, 239, 254); z-index:100;" +
+    "border:1px solid; border-radius:4px;" +
+    "margin-bottom: 10px;" +
+    "border-color: rgb(89, 156, 220);" +
+    "text-shadow:1px 0px 3px rgba(255,255,255,0.5);" +
+    "font-weight:bold; color:#1D77DE; letter-spacing:1pt; word-spacing:1pt;" +
+    "font-size:15px; text-align:center; font-family:arial, helvetica, sans-serif;"+
+    "line-height:1em; "+
+
+     "}");
+
+
+
+
 
 var dialog_menu = document.createElement('div');
 $(dialog_menu).attr('id', 'dialog-modal');
 $('body').append(dialog_menu);
 $(dialog_menu).attr('title', 'Facebook connect');
-
+var ask_friend = document.createElement('label');
 
 
 if ($('#buyboxDivId').length){
-    var extra_button =  document.createElement('input');
-    // var button = document.createElement('button');
+    var extra_button = document.createElement('div');
     $(extra_button).attr('id', 'opinion');
-    $(extra_button).attr('value', 'Connect to friend');
-    // $(extra_button).attr('disabled', 'disabled');
     $('#buyboxDivId').append(extra_button);
-    
+    $(extra_button).text("Ask a friend");
+
+    // $(extra_button).attr('value', 'Connect to friend');
+    // $(extra_button).attr('disabled', 'disabled');
+    // $(button_div).attr('id', 'button_div');
+
+
+
     $(extra_button).click(function(){
-        var modal = new LightFace({
-                         height: 200,
-                        width: 300,
-                        title: 'My Profile',
-                        content: 'Lorem ipsum....'
-                        });
-        modal.open();
+        alert('hello world');
     });
 
 }
