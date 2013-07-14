@@ -31,7 +31,7 @@
 //  //This is the data from the Facebook SDK
 // },false);
 
-
+// declare curatain
 var curtain = document.createElement('div');
 $(curtain).attr('id', 'curtain');
 $('html').append(curtain);
@@ -40,19 +40,36 @@ $(curtain).click(function(){
     $('#poll_wrapper').css('display', 'none');
 });
 
+// declare bucket for poll elemetns
 var wrapper_frame = document.createElement('div');
 $(wrapper_frame).attr('id', 'poll_wrapper');
-
 $('html').append(wrapper_frame);
 
 
-
-var amazon_top_logo = document.createElement('div');
-$(amazon_top_logo).attr('id', 'amz_logo');
+// declare amazon logo
+var amz_top_logo = document.createElement('div');
+$(amz_top_logo).attr('id', 'amz_logo');
 var amz_logo_pict = document.createElement('img');
 $(amz_logo_pict).attr('id', 'amz_logo');
-$(amz_logo_pict).attr('src', 'amz_logo.png');
-$(amazon_top_logo).append(amz_logo_pict);
+amz_logo_pict.src = chrome.extension.getURL("images/amz_logo.png");
+$(amz_top_logo).append(amz_logo_pict);
+$(wrapper_frame).append(amz_top_logo);
+
+var title_elem = document.createElement('div');
+$(title_elem).attr('id', 'title_line');
+$(title_elem).text($('#btAsinTitle').text());
+
+$(wrapper_frame).append(title_elem);
+
+var product_pic = document.createElement('div');
+$(product_pic).attr('id', 'product-main_img');
+var pic = document.createElement('img');
+pic.src = $('#main-image').attr('src');
+$(pic).attr('width', '100%');
+$(pic).attr('hegith', '100%');
+$(product_pic).append(pic);
+
+$(wrapper_frame).append(product_pic);
 
 
 if ($('#buyboxDivId').length){
@@ -61,20 +78,15 @@ if ($('#buyboxDivId').length){
     $('#buyboxDivId').append(extra_button);
     $(extra_button).text("Ask a friend");
 
-    // $(extra_button).attr('value', 'Connect to friend');
-    // $(extra_button).attr('disabled', 'disabled');
-    // $(button_div).attr('id', 'button_div');
-
-
 
     $(extra_button).click(function(){
         $("body").css("overflow", "hidden");
         $('#curtain').css('display', 'block');
         $('#poll_wrapper').css('display', 'block');
         $.ajax({
-                type: "POST",
-                url: "http://secure-plains-5304.herokuapp.com/init",
-                data: { id: "1,2,3"}
+                type: "GET",
+                url: "http://secure-plains-5304.herokuapp.com/init/123123",
+                data: { id: "3"}
         });
     });
 

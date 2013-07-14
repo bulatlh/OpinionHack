@@ -24,14 +24,18 @@
       "js": [
 		 "jquery.js",
 		 "jquery-ui.js",
-"Source/mootools-core-1.4.5-full-nocompat.js",
-"Source/LightFace.js",
-"Source/LightFace.Request.js",
-"Source/LightFace.IFrame.js",
-"Source/LightFace.Image.js",
-"Source/LightFace.Static.js",
- 		"OpinionHack.user.js"
+      "Source/mootools-core-1.4.5-full-nocompat.js",
+      "Source/LightFace.js",
+      "Source/LightFace.Request.js",
+      "Source/LightFace.IFrame.js",
+      "Source/LightFace.Image.js",
+      "Source/LightFace.Static.js",
+       "OpinionHack.user.js"
 		]
     }
+  ],
+  "web_accessible_resources": [
+"images/amz_logo.png"
+
   ]
 }
