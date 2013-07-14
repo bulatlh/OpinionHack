@@ -5,8 +5,9 @@
   "description": "This extension hacks amazon.",
   "version": "1.0",
   "permissions": [
-    "http://www.amazon.com/","tabs", 
-	"http://10.60.6.149/"
+    "http://www.amazon.com/","tabs",
+	"http://10.60.6.149/",
+  "http://secure-plains-5304.herokuapp.com/"
   ],
   "browser_action": {
     "default_icon": "icon.png",
@@ -19,15 +20,15 @@
   "content_scripts": [
     {
       "matches": ["http://www.amazon.com/*"],
-      /*"css": ["mystyles.css"],*/
+      "css": ["mystyles.css"],
       "js": [
 		 "jquery.js",
 		 "jquery-ui.js",
 "Source/mootools-core-1.4.5-full-nocompat.js",
-"Source/LightFace.js",	
-"Source/LightFace.Request.js",	
+"Source/LightFace.js",
+"Source/LightFace.Request.js",
 "Source/LightFace.IFrame.js",
-"Source/LightFace.Image.js",		
+"Source/LightFace.Image.js",
 "Source/LightFace.Static.js",
  		"OpinionHack.user.js"
 		]

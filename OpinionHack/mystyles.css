@@ -1,0 +1,47 @@
+#opinion {
+    position:relative;
+    top:10px;
+    left:0px;
+    height: 35px;
+    width:215px;
+    background-color: rgb(230, 239, 254);
+    z-index:100;
+    border:1px solid;
+    border-radius:4px;
+    margin-bottom: 10px;
+    border-color: rgb(89, 156, 220);
+    text-shadow:1px 0px 3px rgba(255,255,255,0.5);
+    font-weight:bold;
+    color:#1D77DE;
+    letter-spacing:1pt;
+    word-spacing:1pt;
+    font-size:15px;
+    text-align:center;
+    font-family:arial, helvetica, sans-serif;
+    line-height:1em;
+}
+
+#curtain {
+    display : none;
+    position : absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height: 100%;
+    background-color:black;
+    opacity: 0.85;
+    z-index : 150;
+}
+
+#poll_wrapper {
+    display:none;
+    position:absolute;
+    left: 500px;
+    top: 50px;
+    height: 600px;
+    width: 300px;
+    background-color: white;
+    z-index: 151;
+}
+
+#amz_logo{position: relative; }

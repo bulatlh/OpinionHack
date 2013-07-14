@@ -32,28 +32,27 @@
 // },false);
 
 
+var curtain = document.createElement('div');
+$(curtain).attr('id', 'curtain');
+$('html').append(curtain);
+$(curtain).click(function(){
+    $('#curtain').css('display', 'none');
+    $('#poll_wrapper').css('display', 'none');
+});
 
-document.styleSheets[0].insertRule("#opinion {position:relative; top:10px; left:0px; "+
-    " height: 35px; width:215px; background-color: rgb(230, 239, 254); z-index:100;" +
-    "border:1px solid; border-radius:4px;" +
-    "margin-bottom: 10px;" +
-    "border-color: rgb(89, 156, 220);" +
-    "text-shadow:1px 0px 3px rgba(255,255,255,0.5);" +
-    "font-weight:bold; color:#1D77DE; letter-spacing:1pt; word-spacing:1pt;" +
-    "font-size:15px; text-align:center; font-family:arial, helvetica, sans-serif;"+
-    "line-height:1em; "+
+var wrapper_frame = document.createElement('div');
+$(wrapper_frame).attr('id', 'poll_wrapper');
 
-     "}");
-
-
+$('html').append(wrapper_frame);
 
 
 
-var dialog_menu = document.createElement('div');
-$(dialog_menu).attr('id', 'dialog-modal');
-$('body').append(dialog_menu);
-$(dialog_menu).attr('title', 'Facebook connect');
-var ask_friend = document.createElement('label');
+var amazon_top_logo = document.createElement('div');
+$(amazon_top_logo).attr('id', 'amz_logo');
+var amz_logo_pict = document.createElement('img');
+$(amz_logo_pict).attr('id', 'amz_logo');
+$(amz_logo_pict).attr('src', 'amz_logo.png');
+$(amazon_top_logo).append(amz_logo_pict);
 
 
 if ($('#buyboxDivId').length){
@@ -69,7 +68,14 @@ if ($('#buyboxDivId').length){
 
 
     $(extra_button).click(function(){
-        alert('hello world');
+        $("body").css("overflow", "hidden");
+        $('#curtain').css('display', 'block');
+        $('#poll_wrapper').css('display', 'block');
+        $.ajax({
+                type: "POST",
+                url: "http://secure-plains-5304.herokuapp.com/init",
+                data: { id: "1,2,3"}
+        });
     });
 
 }
